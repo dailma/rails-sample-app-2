@@ -5,8 +5,7 @@ class MembersController < ApplicationController
 	end
 
 	def destroy
-		member = Member.find(params[:id].to_i)
-		member.destroy
+		Member.find(params[:id].to_i).destroy
 		redirect_to groups_path
 	end
 end

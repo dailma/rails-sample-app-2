@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 		else
 			user.save
 			session[:user_id] = user.id
+			session[:name] = user.full_name
 			flash[:success] = "Your account is ready for use"
 			redirect_to groups_path
 		end

@@ -31,14 +31,14 @@ body {
 						font-size: x-small;
 					}
 		a {
-			color: #1A64C8;			
+			font-size: large;
+			color: #1A64C8;		
 		}
 			a:hover {
 				color: #0F3973;
 			}
 			a.biglinks {
-				display: block;
-				padding-top: 0.5em;
+				vertical-align: middle;
 				font-weight: bold;
 			}
 		h3 {
@@ -58,6 +58,9 @@ body {
 		.success_msg {
 			font-size: large;
 			color: green;
+		}
+		div.reglog {
+			margin-top: 2em;
 		}
 		div.signin_forms {
 			padding-left: 1em;
@@ -103,6 +106,54 @@ body {
 							color: white;
 							font-weight: bold;
 						}
+		div.grouplist {
+			max-width: 50%;
+			display: inline-block;
+		}
+			div.grouplist p.memcount {
+				margin: 0.5em 2em;
+			}
+			div.grouplist p.groupdesc {
+				margin: 0.5em 1em 1em 2em;
+			}
+			div.grouplist form {
+				display: inline-block;
+				vertical-align: middle;
+				padding-left: 1em;
+			}
+				div.grouplist form input[type=submit] {
+					border: none;
+					background-color: #BB1212;
+					color: white;
+					font-size: x-small;
+				}
+		div.groupshow h2 {
+			display: inline-block;
+			vertical-align: middle;
+		}
+			div.groupshow form {
+				display: inline-block;
+				vertical-align: middle;
+				padding-left: 1em;
+			}
+				div.groupshow form input[type=submit] {
+					height: 2em;
+					border: none;
+					color: white;
+				}
+					input.groupleave{
+						background-color: #BB1212;		
+					}
+					input.groupjoin{
+						background-color: #2B78E4;		
+					}
+			div.groupshow p.memhead {
+				margin-bottom: 0;
+				font-weight: bold;
+			}
+			div.groupshow p.memlist {
+				margin: 0 2em;
+			}
 		.btn_link {
 			padding-left: 0;
 			background-color: transparent;
@@ -111,25 +162,6 @@ body {
 			text-decoration: underline;
 			color: #1A64C8;
 		}
-		form.actions {
-			display: inline-block
-		}
-		table {
-			border: thin solid #2B78E4;
-			padding: 0.5em;
-		}
-			table tr {
-				border-right: thin solid #2B78E4;
-			}
-				table th, table td {
-					padding: 0 0.25em;
-				}
-				table th {
-					padding-bottom: 0.15em;
-					text-align: left;
-					background-color: #C2D9F8;
-					font-weight: normal;
-				}
 		div.footer {
 			padding-top: 2em;
 			text-align: center;

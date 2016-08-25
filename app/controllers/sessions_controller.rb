@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
 			redirect_to main_path
 		else
 			session[:user_id] = user.id
+			session[:name] = user.full_name
 			flash[:success] = "You're now logged in"
 			redirect_to groups_path
 		end
@@ -16,6 +17,7 @@ class SessionsController < ApplicationController
 
 	def destroy
 		session[:user_id] = nil
+		session[:name] = nil
 		flash[:log_success] = "You're now logged out"
 		redirect_to main_path
 	end

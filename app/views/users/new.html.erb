@@ -2,59 +2,61 @@
 	<title>Welcome!	</title>
 <% end %>
 
-<div class="signin_forms">
-	<h3>Register</h3>
-	<% if flash[:reg_errors] %>
-		<ul>
-			<% flash[:reg_errors].each do |msg| %>
-			    <li class="error_msgs"><%= msg %></li>
-			<% end %>
-		</ul>
-	<% end %>
-	<% if flash[:reg_success] %>
-		<p class="success_msg"><%= flash[:reg_success] %></p>
-	<% end %>
-	<form action="/users" method="post">
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-		<div class="form_labels">
-			<label for="user[name_first]">First name</label>
-			<label for="user[name_last]">Last name</label>
-			<label for="user[email]">Email</label>
-			<label for="user[password]">Password</label>
-			<label for="user[password_confirmation]">Confirm password</label>
-		</div>
-		<div class="form_inputs">
-			<input type="text" name="user[name_first]">
-			<input type="text" name="user[name_last]">
-			<input type="text" name="user[email]">
-			<input type="password" name="user[password]" placeholder="at least 8 characters">
-			<input type="password" name="user[password_confirmation]" placeholder="at least 8 characters">
-			<input type="submit" value="Register">
-		</div>
-	</form>
-</div>
-<div class="signin_forms">
-	<h3>Log in</h3>
-	<% if flash[:log_errors] %>
-		<ul>
-			<% flash[:log_errors].each do |msg| %>
-			    <li class="error_msgs"><%= msg %></li>
-			<% end %>
-		</ul>
-	<% end %>
-	<% if flash[:log_success] %>
-		<p class="success_msg"><%= flash[:log_success] %></p>
-	<% end %>
-	<form action="/sessions" method="post">
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-		<div class="form_labels">
-			<label for="user[email]">Email</label>
-			<label for="user[password]">Password</label>
-		</div>
-		<div class="form_inputs">
-			<input type="text" name="user[email]">
-			<input type="password" name="user[password]">
-			<input type="submit" value="Log in">
-		</div>
-	</form>
+<div class="reglog">
+	<div class="signin_forms">
+		<h3>Register</h3>
+		<% if flash[:reg_errors] %>
+			<ul>
+				<% flash[:reg_errors].each do |msg| %>
+				    <li class="error_msgs"><%= msg %></li>
+				<% end %>
+			</ul>
+		<% end %>
+		<% if flash[:reg_success] %>
+			<p class="success_msg"><%= flash[:reg_success] %></p>
+		<% end %>
+		<form action="/users" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<div class="form_labels">
+				<label for="user[name_first]">First name</label>
+				<label for="user[name_last]">Last name</label>
+				<label for="user[email]">Email</label>
+				<label for="user[password]">Password</label>
+				<label for="user[password_confirmation]">Confirm password</label>
+			</div>
+			<div class="form_inputs">
+				<input type="text" name="user[name_first]">
+				<input type="text" name="user[name_last]">
+				<input type="text" name="user[email]">
+				<input type="password" name="user[password]" placeholder="at least 8 characters">
+				<input type="password" name="user[password_confirmation]" placeholder="at least 8 characters">
+				<input type="submit" value="Register">
+			</div>
+		</form>
+	</div>
+	<div class="signin_forms">
+		<h3>Log in</h3>
+		<% if flash[:log_errors] %>
+			<ul>
+				<% flash[:log_errors].each do |msg| %>
+				    <li class="error_msgs"><%= msg %></li>
+				<% end %>
+			</ul>
+		<% end %>
+		<% if flash[:log_success] %>
+			<p class="success_msg"><%= flash[:log_success] %></p>
+		<% end %>
+		<form action="/sessions" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<div class="form_labels">
+				<label for="user[email]">Email</label>
+				<label for="user[password]">Password</label>
+			</div>
+			<div class="form_inputs">
+				<input type="text" name="user[email]">
+				<input type="password" name="user[password]">
+				<input type="submit" value="Log in">
+			</div>
+		</form>
+	</div>
 </div>

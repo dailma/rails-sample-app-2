@@ -17,21 +17,21 @@ class OrgsController < ApplicationController
 	def show
 		@org = Org.find(params[:id])
 		owner = @org.owner
-		if owner == current_user
+		signed_in = current_user
+		if owner == signed_in
 			@name = "You"
 		else
-			@name = owner.name_first + " " + owner.name_last
+			@name = owner.full_name
 		end
 		@members = []
-		@joined = false
+		@memid = nil
 		@org.users.each do |user|
-			@members << user.name_first + " " + user.name_last
-			if user == current_user
-				@joined = true
-				@memid = user.id
-				print "\n\n*** @memid = ",@memid
+			@members << user.full_name
+			if user == signed_in
+				@memid = @org.members.find_by(user:user).id
 			end
 		end
+		@members << "None" if @members === []
 	end
 
 	def create
