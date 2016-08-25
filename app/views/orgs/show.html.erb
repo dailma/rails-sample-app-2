@@ -1,0 +1,25 @@
+<% content_for :head do %>
+	<title>Groups</title>
+<% end %>
+
+<h2><%= @org.name %></h2>
+<% if @joined %>
+	<form action="<%= url_for(:controller => :members, :action => :destroy, :id => @memid) %>" method="post">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<input type="hidden" name="_method" value="delete">
+		<input type="submit" value="Leave group">
+	</form>
+<% else %>
+	<form action="<%= url_for(:controller => :members, :action => :create) %>" method="post">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<input type="hidden" name="org" value="<%= @org.id %>">
+		<input type="submit" value="Join group">
+	</form>
+<% end %>
+<p><%= @org.description %></p>
+<p>Created by: <%= @name %></p>
+<p>Members:</p>
+<% @members.each do |member| %>
+	<p><%= member %></p>
+<% end %>
+<a href="<%= url_for(:controller => :orgs, :action => :index) %>" class="biglinks">Return to dashboard</a>

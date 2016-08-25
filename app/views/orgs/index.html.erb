@@ -1,0 +1,50 @@
+<% content_for :head do %>
+	<title>Dashboard</title>
+<% end %>
+
+<h2>Hi, <%= @name %>!</h2>
+<% if flash[:errors] %>
+	<ul>
+		<% flash[:errors].each do |msg| %>
+		    <li class="error_msgs"><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+<% if flash[:success] %>
+	<p class="success_msg"><%= flash[:success] %></p>
+<% end %>
+<p>Here are the organizations you may join:</p>
+<% @groups.each do |group| %>
+	<a href="<%= url_for(:controller => :orgs, :action => :show, :id => group[0]) %>"><%= group[1] %></a>
+	<% if group[2] %>
+		<form action="<%= url_for(:controller => :orgs, :action => :destroy, :id => group[0]) %>" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<input type="hidden" name="_method" value="delete">
+			<input type="submit" value="Delete group">
+		</form>
+	<% end %>
+	<p>Members: <%= group[3] %></p>
+	<p><%= group[4] %></p>
+<% end %>
+<div class="signin_forms">
+	<p>Create an organization</p>
+	<% if flash[:reg_errors] %>
+		<ul>
+			<% flash[:reg_errors].each do |msg| %>
+			    <li class="error_msgs"><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+	<form action="<%= url_for(:controller => :orgs, :action => :create) %>" method="post">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<div class="form_labels">
+				<label for="org[name]">Name</label>
+				<label for="org[description]">Description</label>
+			</div>
+			<div class="form_inputs">
+				<input type="text" name="org[name]">
+				<input type="text" name="org[description]">
+				<input type="submit" value="Create">
+			</div>
+	</form>
+</div>

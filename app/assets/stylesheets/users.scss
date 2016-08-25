@@ -1,0 +1,142 @@
+body {
+	font-family: Calibri,Helvetica,sans-serif;
+}
+	div.container {
+		margin: auto 0;
+		padding-left: 2em;
+		width: 95%;
+		text-align: left;
+	}
+		div.header {
+			text-align: right;
+		}
+			div.logout {
+				margin: 0 auto;
+				width: 95%;
+			}
+				div.logout p {
+					margin-bottom: 0;
+					padding-right: 0.5em;
+					display: inline-block;
+					font-size: small;
+				}
+				div.logout form {
+					display: inline-block;
+				}
+					div.logout form input[type=submit] {
+						height: 2em;
+						border: none;
+						background-color: #2B78E4;
+						color: white;
+						font-size: x-small;
+					}
+		a {
+			color: #1A64C8;			
+		}
+			a:hover {
+				color: #0F3973;
+			}
+			a.biglinks {
+				display: block;
+				padding-top: 0.5em;
+				font-weight: bold;
+			}
+		h3 {
+			margin-bottom: 0.5em;
+		}
+		ul {
+			margin: 0;
+			padding-left: 2em;
+		}
+		span {
+			padding-right: 1em;
+			font-weight: bold;
+		}
+		.error_msgs {
+			color: red;
+		}
+		.success_msg {
+			font-size: large;
+			color: green;
+		}
+		div.signin_forms {
+			padding-left: 1em;
+			display: inline-block;
+			vertical-align: top;
+			border: solid #2B78E4;
+		}
+			div.signin_forms h3 {
+				color: #2B78E4;
+			}
+			div.signin_forms form {
+				padding: 1em;
+			}
+				div.form_labels {
+					display: inline-block;
+					vertical-align: top;
+					text-align: right;
+				}
+					div.form_labels label {
+						margin-top: 6px;
+						display: block;
+					}
+				div.form_inputs {
+					margin-left: 1em;
+					display: inline-block;
+				}
+					div.form_inputs input {
+						margin-top: 6px;
+						width: 15em;
+						display: block;
+					}
+						div.form_inputs input.text_loc {
+							width: 11.2em;
+							display: inline-block;
+						}
+						div.form_inputs input[type=submit] {
+							margin-top: 1em;
+							width: 6em;
+							height: 3em;
+							display: inline-block;
+							border: none;
+							background-color: #2B78E4;
+							color: white;
+							font-weight: bold;
+						}
+		.btn_link {
+			padding-left: 0;
+			background-color: transparent;
+			border: none;
+			font-weight: bold;
+			text-decoration: underline;
+			color: #1A64C8;
+		}
+		form.actions {
+			display: inline-block
+		}
+		table {
+			border: thin solid #2B78E4;
+			padding: 0.5em;
+		}
+			table tr {
+				border-right: thin solid #2B78E4;
+			}
+				table th, table td {
+					padding: 0 0.25em;
+				}
+				table th {
+					padding-bottom: 0.15em;
+					text-align: left;
+					background-color: #C2D9F8;
+					font-weight: normal;
+				}
+		div.footer {
+			padding-top: 2em;
+			text-align: center;
+			vertical-align: bottom;
+			clear: both;
+		}
+			div.footer img {
+				width: 15%;
+				height: 15%;
+			}
